@@ -1,0 +1,22 @@
+# BUILD
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS base
+WORKDIR /app
+EXPOSE 80
+
+# SET UP Container
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS publish
+WORKDIR /src
+COPY /aspnet-core .
+
+RUN dotnet restore 
+
+WORKDIR "/src/src/LongLearn.Docker.HttpApi.Host"
+
+RUN dotnet publish "LongLearn.Docker.HttpApi.Host.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+
+# RUN 
+ENTRYPOINT ["dotnet", "LongLearn.Docker.HttpApi.Host.dll"]

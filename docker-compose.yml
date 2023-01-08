@@ -1,0 +1,24 @@
+version: '3.8'
+
+networks:
+  longlearnnetwork:
+    name: longlearnnetwork
+
+services:
+  longlearn-service:
+    container_name: longlearn-service
+    image: longlearn-service
+    build:
+      context: .
+      dockerfile: aspnet-core/dockerfile
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+
+  longlearn-web:
+    container_name: longlearn-web
+    image: longlearn-web
+    build:
+      context: .
+      dockerfile: angular/dockerfile
+    environment:
+      - TZ=Asia/Ho_Chi_Minh

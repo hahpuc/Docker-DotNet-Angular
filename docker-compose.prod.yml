@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  # Service BE
+  longlearn-service:
+    networks:
+      - longlearnnetwork
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+      - ASPNETCORE_URLS=http://+:80
+    volumes:
+      - /srv/www/Ecommerce-ABP-NET/app-volumes/longlearn-service:/data
+    ports:
+      - 44342:80
+    restart: always
+
+  # Web FE
+  longlearn-web:
+    networks:
+      - longlearnnetwork
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+    ports:
+      - 4200:80
+    volumes:
+      - /srv/www/Ecommerce-ABP-NET/app-volumes/longlearn-web:/data
+    restart: always
