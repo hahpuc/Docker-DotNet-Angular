@@ -9,7 +9,7 @@ services:
       - TZ=Asia/Ho_Chi_Minh
       - ASPNETCORE_URLS=http://+:80
     volumes:
-      - /srv/www/Ecommerce-ABP-NET/app-volumes/longlearn-service:/data
+      - /srv/www/Docker-DotNet-Angular/app-volumes/longlearn-service:/data
     ports:
       - 44342:80
     restart: always
@@ -23,5 +23,5 @@ services:
     ports:
       - 4200:80
     volumes:
-      - /srv/www/Ecommerce-ABP-NET/app-volumes/longlearn-web:/data
+      - /srv/www/Docker-DotNet-Angular/app-volumes/longlearn-web:/data
     restart: always
