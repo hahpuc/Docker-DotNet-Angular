@@ -1,0 +1,7 @@
+{
+    "/*": {
+        "target": "http://89.117.53.210:44342",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
