@@ -8,10 +8,10 @@ services:
     environment:
       - TZ=Asia/Ho_Chi_Minh
       - ASPNETCORE_URLS=http://+:80
-      - ConnectionStrings__Default=Server=89.117.53.210,1433;Database=TestDB;TrustServerCertificate=True;User Id=sa;Password=Long@1234
-      - App__CorsOrigins=https://*.Docker.com,http://localhost:4200,http://89.117.53.210:4200
-      - App__ClientUrl=http://89.117.53.210:4200
-      - AuthServer__Authority=http://89.117.53.210:44342
+      - ConnectionStrings__Default=Server=154.26.128.219,1433;Database=TestDB;TrustServerCertificate=True;User Id=sa;Password=Long@1234
+      - App__CorsOrigins=https://*.Docker.com,http://localhost:4200,http://154.26.128.219:4200
+      - App__ClientUrl=http://154.26.128.219:4200
+      - AuthServer__Authority=http://154.26.128.219:44342
     volumes:
       - /srv/www/Docker-DotNet-Angular/app-volumes/longlearn-service:/data
     ports:
